@@ -16,7 +16,7 @@ interface SavedState {
 let timer: ReturnType<typeof setTimeout> | undefined;
 
 export const useSavedStore = create<SavedState>((set, get) => ({
-  savedIds: ['acad', 'exam'],
+  savedIds: ['acad', 'exam', 'tour', 'grad', 'gemini', 'thesis', 'mentor'],
   toast: null,
 
   toggleSave: (id) => {
