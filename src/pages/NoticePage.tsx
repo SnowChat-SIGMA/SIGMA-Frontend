@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, type UIEvent } from 'react';
 import { Link } from 'react-router-dom';
 import type { Notice } from '../types';
 import { NOTICES } from '../mocks/notices';
@@ -58,6 +58,15 @@ export default function NoticePage() {
     setVisibleCount(PAGE_SIZE);
   };
 
+  // 목록을 바닥 근처까지 스크롤하면 다음 10건을 불러옴 (무한 스크롤, NOTICE-08)
+  const handleListScroll = (e: UIEvent<HTMLDivElement>) => {
+    const el = e.currentTarget;
+    const nearBottom = el.scrollTop + el.clientHeight >= el.scrollHeight - 40;
+    if (nearBottom && hasMore) {
+      setVisibleCount(visibleCount + PAGE_SIZE);
+    }
+  };
+
   return (
     <div className={styles.page}>
       <div className={styles.titleRow}>
@@ -97,7 +106,7 @@ export default function NoticePage() {
 
           <div className={styles.columns}>
             <section aria-label="공지 목록" className={styles.listCard}>
-              <div className={styles.listScroll}>
+              <div key={tab} className={styles.listScroll} onScroll={handleListScroll}>
                 {shown.length === 0 && <p className={styles.empty}>해당하는 공지가 없습니다.</p>}
 
                 {shown.map((n) => {
@@ -125,19 +134,6 @@ export default function NoticePage() {
                   );
                 })}
               </div>
-
-              {shown.length > 0 && (
-                <div className={styles.moreWrap}>
-                  <button
-                    type="button"
-                    className={styles.more}
-                    disabled={!hasMore}
-                    onClick={() => setVisibleCount(visibleCount + PAGE_SIZE)}
-                  >
-                    {hasMore ? '더 보기' : '더 보기 (마지막 공지예요)'}
-                  </button>
-                </div>
-              )}
             </section>
 
             {current && (

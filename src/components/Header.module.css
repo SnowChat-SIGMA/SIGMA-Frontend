@@ -12,24 +12,11 @@
 }
 
 .logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
   color: var(--navy);
+  font-size: 24px;
   font-weight: 800;
-  font-size: 20px;
+  letter-spacing: -0.02em;   /* 글자 간격 살짝 좁게 */
   text-decoration: none;
-}
-
-.logoMark {
-  width: 34px;
-  height: 34px;
-  border-radius: 10px;
-  background: var(--navy);
-  color: var(--white);
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .nav {
