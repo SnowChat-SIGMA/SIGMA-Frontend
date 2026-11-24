@@ -1,0 +1,73 @@
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 20px;
+  padding: 14px 32px;
+  background: var(--white);
+  border-bottom: 1px solid #E3E6EB;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--navy);
+  font-weight: 800;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.logoMark {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: var(--navy);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.menu {
+  padding: 10px 14px;
+  border-radius: 10px;
+  color: #3D4350;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.active {
+  background: #E8EEF8;
+  color: var(--navy);
+  font-weight: 700;
+}
+
+.snowchat {
+  margin-left: auto;
+  padding: 10px 18px;
+  border-radius: 22px;
+  background: var(--navy);
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.profile {
+  width: 44px;
+  height: 44px;
+  border-radius: 22px;
+  background: #E8EEF8;
+  color: var(--navy);
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
