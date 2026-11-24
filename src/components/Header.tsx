@@ -11,10 +11,7 @@ const MENUS = [
 export default function Header() {
   return (
     <header className={styles.header}>
-      <Link to="/" className={styles.logo}>
-        <span className={styles.logoMark} aria-hidden="true">Σ</span>
-        시그마
-      </Link>
+      <Link to="/" className={styles.logo}>snowtice</Link>
 
       <nav className={styles.nav} aria-label="주요 메뉴">
         {MENUS.map((m) => (
