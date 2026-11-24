@@ -1,0 +1,18 @@
+.button {
+  min-height: 2.875rem;
+  padding: 0 1.125rem;
+  border-radius: 0.75rem;
+  border: 1px solid #D9D9D6;
+  background: var(--white);
+  color: #1A1F2B;
+  font: inherit;
+  font-size: 0.9375rem;
+  cursor: pointer;
+}
+
+.saved {
+  border-color: #FFB500;
+  background: #FFF7E0;
+  color: #6B4A00;
+  font-weight: 700;
+}

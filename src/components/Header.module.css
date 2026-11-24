@@ -6,6 +6,9 @@
   padding: 14px 32px;
   background: var(--white);
   border-bottom: 1px solid #E3E6EB;
+  position: sticky;   /* 스크롤해도 위에 붙어 있음 */
+  top: 0;
+  z-index: 10;        /* 페이지 내용 위에 보이게 */
 }
 
 .logo {
