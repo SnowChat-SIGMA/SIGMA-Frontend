@@ -1,0 +1,118 @@
+.page { display: flex; flex-direction: column; gap: 1.25rem; }
+
+.title { margin: 0; font-size: 1.75rem; font-weight: 800; }
+.subtitle { margin: 0.25rem 0 0; font-size: 0.90625rem; color: #4A5060; }
+
+/* 왼쪽 목록 + 오른쪽 달력 (LIB-01) */
+.columns {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 22rem;
+  gap: 1.25rem;
+  align-items: start;
+}
+.listArea { display: flex; flex-direction: column; gap: 0.875rem; min-width: 0; }
+.calendarSlot { position: sticky; top: 6rem; }   /* 스크롤해도 달력이 따라옴 */
+
+/* 진행 중 / 지난 공지 탭 + 모두 접기 */
+.toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: 0.625rem; }
+.tabs {
+  display: flex;
+  gap: 0.25rem;
+  padding: 0.25rem;
+  border-radius: 0.75rem;
+  background: var(--white);
+  border: 1px solid #E3E6EB;
+}
+.tab {
+  min-height: 2.5rem;
+  padding: 0 1rem;
+  border-radius: 0.5625rem;
+  border: 0;
+  background: transparent;
+  color: #3D4350;
+  font: inherit;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+.tabActive { background: var(--navy); color: var(--white); font-weight: 700; }
+.collapseAll {
+  margin-left: auto;
+  min-height: 2.5rem;
+  padding: 0 0.875rem;
+  border-radius: 0.625rem;
+  border: 1px solid #D9D9D6;
+  background: var(--white);
+  color: #3D4350;
+  font: inherit;
+  font-size: 0.84375rem;
+  cursor: pointer;
+}
+
+/* 분야 칩 */
+.chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.chip {
+  min-height: 2.375rem;
+  padding: 0 0.875rem;
+  border-radius: 1.1875rem;
+  border: 1px solid #D9D9D6;
+  background: var(--white);
+  color: #3D4350;
+  font: inherit;
+  font-size: 0.84375rem;
+  cursor: pointer;
+}
+.chipActive { background: #E8EEF8; border-color: var(--navy); color: var(--navy); font-weight: 700; }
+
+.noCards {
+  margin: 0;
+  padding: 2.5rem 1.25rem;
+  text-align: center;
+  background: var(--white);
+  border: 1px solid #E3E6EB;
+  color: #4A5060;
+  font-size: 0.90625rem;
+}
+
+/* 저장 0건 (LIB-09) */
+.emptyCard {
+  background: var(--white);
+  border: 1px solid #E3E6EB;
+  border-radius: 0;
+  padding: 4.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+}
+.emptyCard p { margin: 0; font-size: 1rem; color: #3D4350; }
+.emptyActions { display: flex; flex-wrap: wrap; gap: 0.625rem; justify-content: center; }
+.primaryButton {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.875rem;
+  padding: 0 1.25rem;
+  border-radius: 0.75rem;
+  background: var(--navy);
+  color: var(--white);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+.secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.875rem;
+  padding: 0 1.25rem;
+  border-radius: 0.75rem;
+  border: 1px solid #D9D9D6;
+  color: #1A1F2B;
+  font-size: 0.9375rem;
+  text-decoration: none;
+}
+
+/* 좁은 화면: 달력이 목록 위로 (LIB-01) */
+@media (max-width: 900px) {
+  .columns { grid-template-columns: 1fr; }
+  .calendarSlot { order: -1; position: static; }
+}

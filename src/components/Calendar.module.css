@@ -1,0 +1,91 @@
+.calendar {
+  background: var(--white);
+  border: 1px solid #E3E6EB;
+  border-radius: 0;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+/* ‹ 2026년 11월 › */
+.header { display: flex; align-items: center; gap: 0.5rem; }
+.navButton {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.625rem;
+  border: 1px solid #E3E6EB;
+  background: var(--white);
+  font: inherit;
+  font-size: 1rem;
+  color: #1A1F2B;
+  cursor: pointer;
+}
+.monthLabel { flex: 1; margin: 0; text-align: center; font-size: 1.0625rem; font-weight: 800; }
+
+/* 요일 + 날짜 칸 (7칸 격자) */
+.weekdays, .grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 0.25rem;
+}
+.weekdays { text-align: center; font-size: 0.75rem; color: #4A5060; }
+
+.day {
+  height: 2.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.125rem;
+  border-radius: 0.625rem;
+  border: 2px solid transparent;
+  background: var(--white);
+  font: inherit;
+  font-size: 0.84375rem;
+  color: #1A1F2B;
+  cursor: pointer;
+}
+.day:hover { background: var(--bg); }
+.today { border-color: var(--navy); color: var(--navy); font-weight: 800; }
+.selected, .selected:hover { background: var(--navy); border-color: var(--navy); color: var(--white); font-weight: 800; }
+
+/* 점 */
+.dots { display: flex; gap: 0.1875rem; height: 0.375rem; }
+.dot { display: inline-block; width: 0.375rem; height: 0.375rem; border-radius: 50%; flex-shrink: 0; }
+.deadline { background: var(--orange); }
+.event { background: var(--blue); }
+.week { background: var(--white); border: 1.5px solid #97999B; }
+
+.legend { display: flex; gap: 0.875rem; font-size: 0.75rem; color: #4A5060; }
+.legend > span { display: flex; align-items: center; gap: 0.375rem; }
+
+/* 달력 아래 일정 목록 */
+.listBox {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  border-top: 1px solid #EEF0F3;
+  padding-top: 0.75rem;
+}
+.listHead { font-size: 0.8125rem; font-weight: 700; color: #3D4350; }
+.list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+.item {
+  width: 100%;
+  display: flex;
+  gap: 0.625rem;
+  align-items: center;
+  min-height: 2.5rem;
+  padding: 0.25rem 0.375rem;
+  border: 0;
+  border-radius: 0.5rem;
+  background: transparent;
+  font: inherit;
+  font-size: 0.84375rem;
+  color: #1A1F2B;
+  text-align: left;
+  cursor: pointer;
+}
+.item:hover { background: var(--bg); }
+.itemDate { width: 4.625rem; flex-shrink: 0; color: #4A5060; }
+.noEvents { margin: 0; padding: 0.5rem 0; font-size: 0.8125rem; color: #4A5060; }
