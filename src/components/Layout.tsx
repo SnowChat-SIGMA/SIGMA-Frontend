@@ -6,7 +6,7 @@ export default function Layout() {
   return (
     <>
       <Header />
-      <main style={{ maxWidth: 1080, margin: '0 auto', padding: '32px 32px 56px' }}>
+      <main style={{ maxWidth: '80rem', margin: '0 auto', padding: '2rem 2rem 3.5rem' }}>
         <Outlet />
       </main>
       <Toast />

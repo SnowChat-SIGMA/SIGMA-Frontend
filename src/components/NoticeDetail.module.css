@@ -1,0 +1,90 @@
+.body { display: flex; flex-direction: column; gap: 1.125rem; }
+
+.facts {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  font-size: 0.90625rem;
+}
+.row { display: grid; grid-template-columns: 6.875rem minmax(0, 1fr); gap: 1rem; }
+.row dt { color: #4A5060; }
+.row dd { margin: 0; line-height: 1.6; }
+.missing { color: #6B7180; }
+
+.warning {
+  padding: 0.875rem 1rem;
+  border-radius: 0.75rem;
+  background: #FFF1E3;
+  border: 1px solid #FFD6A8;
+  color: #7A3800;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.timeline { border: 1px solid #E3E6EB; border-radius: 0; overflow: hidden; }
+.timelineToggle {
+  width: 100%;
+  min-height: 3rem;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 0;
+  background: #FAFBFC;
+  font: inherit;
+  font-size: 0.90625rem;
+  font-weight: 700;
+  color: #1A1F2B;
+  cursor: pointer;
+}
+.toggleLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: var(--navy);
+}
+
+.chevron {
+  width: 1.125rem;
+  height: 1.125rem;
+  transform: translateY(0.125rem);   /* 펼치기(⌄)일 때 2px 아래로 */
+  transition: transform 0.2s;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+.stages { list-style: none; margin: 0; padding: 0.5rem 1rem 1rem; }
+.stage {
+  display: flex;
+  gap: 0.875rem;
+  align-items: flex-start;
+  padding: 0.625rem 0;
+  border-bottom: 1px solid #F1F2F4;
+}
+.dot {
+  width: 0.875rem;
+  height: 0.875rem;
+  margin-top: 0.25rem;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 2px solid #97999B;
+  background: var(--white);
+}
+.stageText { flex: 1; display: flex; flex-direction: column; gap: 0.125rem; }
+.stageName { font-size: 0.90625rem; }
+.when { font-size: 0.8125rem; color: #4A5060; }
+.stageStatus {
+  font-size: 0.78125rem;
+  padding: 0.125rem 0.5rem;
+  border-radius: 0.5rem;
+  background: var(--bg);
+  color: #3D4350;
+}
+
+.done .dot { border-color: #C4C6C9; background: #C4C6C9; }
+.done .stageName, .done .stageStatus { color: #6B7180; }
+.now .dot { border-color: var(--blue); background: var(--blue); }
+.now .stageName { font-weight: 800; }
+.now .stageStatus { color: #00539A; font-weight: 800; }

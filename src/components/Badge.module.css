@@ -1,0 +1,20 @@
+.status {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.1875rem 0.625rem;
+  border-radius: 0.75rem;
+}
+.new { background: #E6F1FB; color: #00539A; }
+.open { background: #FFF1E3; color: #9A4700; }
+.past { background: #EEF0F3; color: #4A5060; }
+
+.verdict {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.125rem 0.5rem;
+  border-radius: 0.5rem;
+  margin-left: 0.25rem;
+}
+.match { background: #E6F1FB; color: #00539A; }
+.noMatch { background: #EEF0F3; color: #4A5060; }
+.check { background: #EFEAFB; color: #5B3FB0; }
