@@ -1,0 +1,14 @@
+:root {
+  --navy: #003087;     /* 메인 남색 */
+  --blue: #0072CE;     /* 링크·강조 파랑 */
+  --orange: #FF7D01;   /* 유의사항·마감 */
+  --bg: #F5F7FA;       /* 페이지 배경 */
+  --white: #FFFFFF;
+  --gray: #4A5060;     /* 지난 행사 */
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  font-family: 'Noto Sans KR', sans-serif;
+}
