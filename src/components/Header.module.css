@@ -18,7 +18,7 @@
 }
 
 .logoImage {
-  height: 32px;       /* 로고 높이 (가로는 비율에 맞춰 자동) */
+  height: 40px;
   width: auto;
   display: block;
 }
