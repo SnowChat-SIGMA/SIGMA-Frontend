@@ -8,9 +8,10 @@
 }
 
 html {
-  scrollbar-gutter: stable;
-  overscroll-behavior: none;
+  scrollbar-width: none;        /* 페이지 스크롤바 숨김 (크롬·엣지·파이어폭스) */
+  overscroll-behavior: none;    /* 끝까지 스크롤해도 화면이 튕기지 않게 */
 }
+html::-webkit-scrollbar { display: none; }   /* 페이지 스크롤바 숨김 (사파리 등) */
 
 body {
   margin: 0;
