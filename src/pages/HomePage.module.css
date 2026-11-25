@@ -1,0 +1,188 @@
+.page {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--white);
+}
+
+.banner {
+  position: relative;
+  z-index: 3;
+  margin: 0 2rem;
+  padding: 0.875rem 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  border-radius: 0.875rem;
+  background: #FFF4E5;
+  border: 1px solid #FFD6A8;
+}
+.bannerText { flex: 1 1 20rem; font-size: 0.90625rem; color: #7A3800; }
+.bannerActions { display: flex; gap: 0.5rem; }
+.bannerPrimary {
+  min-height: 2.5rem;
+  padding: 0 1rem;
+  border: 0;
+  border-radius: 0.625rem;
+  background: var(--navy);
+  color: var(--white);
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.bannerSecondary {
+  min-height: 2.5rem;
+  padding: 0 1rem;
+  border: 1px solid #D9D9D6;
+  border-radius: 0.625rem;
+  background: var(--white);
+  color: #3D4350;
+  font: inherit;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.main {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2.5rem 1.5rem 13.75rem;
+  text-align: center;
+}
+
+.logo { height: 5rem; width: auto; display: block; }
+.intro { margin: 0; font-size: 1.1875rem; line-height: 1.6; color: #4A5060; }
+
+.askWrap { display: flex; flex-direction: column; align-items: center; gap: 0.75rem; }
+.ask {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.125rem 1.875rem;
+  border-radius: 2.5rem;
+  background: var(--navy);
+  color: var(--white);
+  font-size: 1.125rem;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 10px 24px rgba(0, 48, 135, 0.22);
+}
+.ask svg { width: 1.25rem; height: 1.25rem; flex-shrink: 0; }
+.leaveNote { margin: 0; font-size: 0.84375rem; color: #4A5060; }
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.125rem;
+  border: 1px solid #D9D9D6;
+  border-radius: 1.375rem;
+  background: var(--white);
+  color: #1A1F2B;
+  font-size: 0.875rem;
+  text-decoration: none;
+}
+.chip svg { width: 1rem; height: 1rem; }
+.chipStrong {
+  padding: 0.75rem 1.375rem;
+  border: 2px solid var(--blue);
+  background: #E8F1FB;
+  color: var(--navy);
+  font-size: 0.9375rem;
+  font-weight: 700;
+}
+.dot { width: 0.5rem; height: 0.5rem; border-radius: 50%; background: var(--blue); }
+
+.snow {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+.flake {
+  position: absolute;
+  top: 0;
+  width: 18px;
+  height: 18px;
+  opacity: 0.55;
+  animation-name: fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-fill-mode: backwards;
+}
+@keyframes fall {
+  from { transform: translateY(-40px) rotate(0deg); opacity: 0; }
+  15% { opacity: 0.55; }
+  to { transform: translateY(100vh) rotate(180deg); opacity: 0; }
+}
+
+.track {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  height: 190px;
+  pointer-events: none;
+}
+.ground {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 38px;
+  background: #E8EEF8;
+  border-top: 2px solid #C9D6EE;
+}
+.runner {
+  position: absolute;
+  bottom: 34px;
+  animation: run 14s linear infinite;
+}
+@keyframes run {
+  from { left: -160px; }
+  to { left: 100%; }
+}
+.character {
+  display: block;
+  width: 120px;
+  height: auto;
+  animation: bob 0.6s ease-in-out infinite;
+}
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+
+.footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 8px;
+  z-index: 2;
+  padding: 0 1rem;
+  text-align: center;
+  font-size: 12px;
+  color: #4A5060;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flake, .runner, .character { animation: none; }
+  .flake { display: none; }
+  .runner { left: 50%; transform: translateX(-50%); }
+}
+
+@media (max-width: 600px) {
+  .logo { height: 3.5rem; }
+  .intro { font-size: 1rem; }
+  .ask { padding: 1rem 1.375rem; font-size: 1rem; }
+}
