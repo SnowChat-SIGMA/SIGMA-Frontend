@@ -111,7 +111,6 @@
   text-decoration: none;
 }
 
-/* 좁은 화면: 달력이 목록 위로 (LIB-01) */
 @media (max-width: 900px) {
   .columns { grid-template-columns: 1fr; }
   .calendarSlot { order: -1; position: static; }

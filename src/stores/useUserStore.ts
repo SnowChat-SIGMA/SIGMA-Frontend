@@ -46,10 +46,13 @@ function hasAnyValue(profile: AcademicProfile) {
 }
 
 interface UserState {
+  loggedIn: boolean;
   interests: string[];
   profile: AcademicProfile;
   hasAcademicInfo: boolean;
   pushEnabled: boolean;
+  login: () => void;
+  logout: () => void;
   setInterests: (interests: string[]) => void;
   setProfile: (profile: AcademicProfile) => void;
   setPushEnabled: (on: boolean) => void;
@@ -57,12 +60,16 @@ interface UserState {
 }
 
 export const useUserStore = create<UserState>((set) => ({
+  loggedIn: true,
   interests: ['진로·취업', '교내 장학', '졸업 요건·심사'],
   profile: INITIAL_PROFILE,
   hasAcademicInfo: hasAnyValue(INITIAL_PROFILE),
   pushEnabled: true,
+  login: () => set({ loggedIn: true }),
+  logout: () => set({ loggedIn: false }),
   setInterests: (interests) => set({ interests }),
   setProfile: (profile) => set({ profile, hasAcademicInfo: hasAnyValue(profile) }),
   setPushEnabled: (pushEnabled) => set({ pushEnabled }),
-  resetAll: () => set({ interests: [], profile: EMPTY_PROFILE, hasAcademicInfo: false, pushEnabled: false }),
+  resetAll: () =>
+    set({ loggedIn: false, interests: [], profile: EMPTY_PROFILE, hasAcademicInfo: false, pushEnabled: false }),
 }));

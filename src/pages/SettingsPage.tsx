@@ -142,7 +142,7 @@ export default function SettingsPage() {
     setInterests(picked);
     setProfile(profile);
     setPushEnabled(push);
-    navigate('/');   // TODO: 01 홈을 만들면 S2 홈으로
+    navigate('/');
   };
 
   const clearProfile = () => {
@@ -153,9 +153,9 @@ export default function SettingsPage() {
 
   const withdraw = () => {
     skipBlockRef.current = true;
+    navigate('/', { flushSync: true });
     resetAll();
     useSavedStore.setState({ savedIds: [] });
-    navigate('/');   // TODO: 로그인 기능을 만들면 로그아웃 후 S0 홈으로
   };
 
   const previewText = valid
