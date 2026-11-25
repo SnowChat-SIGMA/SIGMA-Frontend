@@ -12,11 +12,15 @@
 }
 
 .logo {
-  color: var(--navy);
-  font-size: 24px;
-  font-weight: 800;
-  letter-spacing: -0.02em;   /* 글자 간격 살짝 좁게 */
+  display: flex;
+  align-items: center;
   text-decoration: none;
+}
+
+.logoImage {
+  height: 32px;       /* 로고 높이 (가로는 비율에 맞춰 자동) */
+  width: auto;
+  display: block;
 }
 
 .nav {

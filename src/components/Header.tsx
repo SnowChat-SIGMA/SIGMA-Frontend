@@ -1,4 +1,5 @@
 import { Link, NavLink } from 'react-router-dom';
+import logo from '../assets/logo.png';
 import styles from './Header.module.css';
 
 const MENUS = [
@@ -11,7 +12,9 @@ const MENUS = [
 export default function Header() {
   return (
     <header className={styles.header}>
-      <Link to="/" className={styles.logo}>snowtice</Link>
+      <Link to="/" className={styles.logo}>
+        <img src={logo} alt="snowtice" className={styles.logoImage} />
+      </Link>
 
       <nav className={styles.nav} aria-label="주요 메뉴">
         {MENUS.map((m) => (
